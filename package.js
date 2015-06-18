@@ -2,7 +2,7 @@ Package.describe({
   name: 'ndemoreau:azimulti-views-bootstrap',
   summary: 'Azimuth Multilanguage CMS frontend templates (using Bootstrap 3.x)',
   version: '0.4.1',
-  git: 'https://github.com/ndemoreau/azimuth-views-bootstrap'
+  git: 'https://github.com/ndemoreau/azimulti-views-bootstrap'
 });
 
 Package.on_use(function (api) {
