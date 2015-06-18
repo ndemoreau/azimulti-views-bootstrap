@@ -1,0 +1,21 @@
+<template name="account_buttons">
+  {{#if currentUser}}
+
+    {{#if profileUrl}}
+      <a class='profileLink' href='{{profileUrl}}'>{{signedInAs}}</a>
+    {{else}}
+      <p class="navbar-text">{{signedInAs}}</p>
+    {{/if}}
+
+    <a href="/sign-out">Sign Out</a>
+
+  {{else}}
+
+    <a href="/login">Sign In</a>
+
+    {{#unless wrapLinks}}<span>or</span>{{/unless}}
+
+    <a href="/sign-up">Sign Up</a>
+
+  {{/if}}
+</template>

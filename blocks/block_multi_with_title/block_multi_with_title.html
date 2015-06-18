@@ -1,0 +1,8 @@
+<template name="block_multi_with_title">
+    {{#with block}}
+          <div class="col-md-{{columns}}">
+            <h1>{{{_t title}}}</h1>
+            <p>{{{_t contents}}}</p>
+          </div>
+    {{/with}}
+</template>

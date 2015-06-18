@@ -1,0 +1,14 @@
+<template name="sidebar_left">
+{{#with page}}
+  <div class="container sidebar-left">
+    <div class="row">
+      <div class="col-md-3">
+        {{> block_display zone="sidebar"}}
+      </div>
+      <div class="col-md-9">
+        {{> block_display zone="body"}}
+      </div>
+    </div>
+  </div>
+{{/with}}
+</template>

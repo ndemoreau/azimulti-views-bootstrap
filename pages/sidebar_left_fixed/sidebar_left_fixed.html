@@ -1,0 +1,14 @@
+<template name="sidebar_left_fixed">
+{{#with page}}
+  <div class="container sidebar-left" data-target="#toc">
+    <div class="row">
+      <div class="col-md-3">
+        {{> block_display zone="sidebar"}}
+      </div>
+      <div class="col-md-9">
+        {{> block_display zone="body"}}
+      </div>
+    </div>
+  </div>
+{{/with}}
+</template>

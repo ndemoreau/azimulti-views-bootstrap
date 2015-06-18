@@ -1,0 +1,62 @@
+<template name="header">
+  <div class="navbar">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">{{#if getSetting "logoUrl"}}<img class="logo" src="{{getSetting 'logoUrl'}}">{{/if}}{{getSetting 'siteName'}}</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="page-menu navbar-collapse collapse">
+      {{#with headerNav}}
+        {{>header_nav_root}}
+      {{/with}}
+      {{#if getSetting 'showLoginInHeader'}}
+        <div class="nav navbar-nav navbar-right">
+          <p class="navbar-text">
+           <a href="/login"><i class="icon icon-user{{#if signedInAs}} logged-in{{/if}}"></i></a>
+          </p>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="header_nav_root">
+  <ul class="navbar-nav nav">
+    {{#each this}}
+      {{#if children}}
+        <li class="dropdown">
+          <a class="dropdown-toggle disabled" href="{{url}}" data-toggle="dropdown">{{title}}<b class="caret"></b></a>
+          {{>header_nav_child}}
+        </li>
+      {{else}}
+        <li>
+          <a href="{{url}}">{{title}}</a>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="header_nav_child">
+  <ul class="dropdown-menu">
+    {{#each children}}
+      {{#with child}}
+        {{#if children}}
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="{{url}}">{{title}}<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              {{>header_nav_child}}
+            </ul>
+          </li>
+        {{else}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+          </li>
+        {{/if}}
+      {{/with}}
+    {{/each}}
+  </ul>
+</template>
