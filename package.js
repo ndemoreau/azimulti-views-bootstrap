@@ -1,13 +1,13 @@
 Package.describe({
   name: 'ndemoreau:azimulti-views-bootstrap',
   summary: 'Azimuth Multilanguage CMS frontend templates (using Bootstrap 3.x)',
-  version: '0.4.2',
+  version: '0.4.3',
   git: 'https://github.com/ndemoreau/azimulti-views-bootstrap'
 });
 
 Package.on_use(function (api) {
   api.use(['less@1.0.11', 'templating@1.0.9', 'mizzao:bootstrap-3@3.3.0'], 'client');
-  api.use('ndemoreau:azimulti-core@0.4.2', {unordered: true});
+  api.use('ndemoreau:azimulti-core@0.4.3', {unordered: true});
 
   api.add_files('css/style.less', 'client');
   api.add_files('blocks/block/block.html', 'client');
